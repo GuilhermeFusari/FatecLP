@@ -5,25 +5,13 @@ jogadas = ['Pedra', 'Papel', 'Tesoura']
 player = input("Escolha pedra papel ou tesoura: ").lower()
 bot = random.choice(jogadas)
 print(f'\nSua jogada: {player} --- Jogada do Bot: {bot}\n')
-match player:
-    case 'pedra':
-        if bot == 'Papel':
-            print("Você perdeu!")
-        elif bot == 'Tesoura':
-            print("Voce ganhou!")
-        else:
-            print("Empate")
-    case 'papel':
-        if bot == 'Tesoura':
-            print("Você perdeu!")
-        elif bot == 'Pedra':
-            print("Voce ganhou!")
-        else:
-            print("Empate")
-    case 'tesoura':
-        if bot == 'Pedra':
-            print("Você perdeu!")
-        elif bot == 'Papel':
-            print("Voce ganhou!")
-        else:
-            print("Empate")
+if bot == player:
+    print('Empate')
+elif bot == 'Pedra' and player == 'papel':
+    print('Voce ganhou!')
+elif bot == 'Tesoura' and player == 'pedra':
+    print('Voce ganhou!')
+elif bot == 'Papel' and player == 'tesoura':
+    print('Voce ganhou!')
+else:
+    print("Voce perdeu")
