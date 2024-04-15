@@ -8,13 +8,13 @@ o usuário perderá uma chance. No total, o usuário terá
 """
 import os
 print("---- JOGO DA FORCA----")
-palavra = input("Jogador 1- Digite uma palavra: ")
+palavra = input("Jogador 1- Digite uma palavra: ").lower()
 os.system('cls')
 print("Jogador 2 - Você tem 6 chances para acertar a palavra")
 estado_da_palavra = ["_"]*len(palavra)
 tentativas = 6
 while tentativas !=0:
-    guess = input("Jogador 2 - Digite uma letra: ")
+    guess = input("Jogador 2 - Digite uma letra: ").lower()
     if guess in palavra:
         print("você acertou uma letra na posição {}".format(palavra.index(guess)))
         for i in range (len(palavra)):
